@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produk Kami</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Oswald:wght@200..700&family=Share+Tech&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Style.css"/>
+</head>
+<body>
+
+  <div class="header">PRODUK KAMI</div>
+
+  <div class="slider-container">
+    <div class="slide"><img src="image/merah.png" alt="Merah" /></div>
+    <div class="slide"><img src="image/biru.png" alt="Biru" /></div>
+    <div class="slide"><img src="image/hitam.png" alt="Hitam" /></div>
+    <div class="slide"><img src="image/hijau.png" alt="Hijau" /></div>
+  </div>
+
+  <div class="content">
+    <div class="harga">Rp115.000</div>
+    <div class="deskripsi">SMARTCLOCK | Jam digital dengan Arduino Uno R3, LCD 16x2 I2C</div>
+
+    <hr />
+
+    <h4>Varian</h4>
+    <div class="varian">
+      <button onclick="show('image/merah.png')"  class="red">Merah</button>
+      <button onclick="show('image/hitam.png')" class="black">Hitam</button>
+      <button onclick="show('image/biru.png')" class="blue">Biru</button>
+      <button onclick="show('image/hijau.png')" class="green">Hijau</button>
+      <button class="custom">Custom</button>
+    </div>
+    <div class="popup" id="popup" onclick="closePreview()">
+      <div class="popup-content" onclick="event.stopPropagation()">
+      <img id="popup-img" src="" alt="preview-jam" />
+      <button class="close-btn" onclick="closePreview()">X</button>
+      </div>
+    </div>
+      <h4>Deskripsi</h4>
+  <div class="des">
+    <p>SMARTCLOCK | jam digital dengan kontrol arduino uno r3, Tampilan menggunakan lcd 16x2</p>
+    <p><b>Fitur</b></p>
+    <ul>
+      <li>menampilkan waktu dan tanggal</li>
+      <li>mendeteksi suhu dan menampilkanya</li>
+      <li>sebagai alarm</li>
+    </ul>
+    <a>Model baru pertama <b>RILIS</b></a>
+  </div>
+  </div>
+
+  <div class="pesan-btn">
+    <button onclick="pesan()">PESAN SEKARANG</button>
+  </div>
+    <script>
+      function show(imageSrc){
+        const popup=document.getElementById('popup');
+        const img=document.getElementById('popup-img');
+        img.src=imageSrc;
+        popup.classList.add('open');
+      }
+      function closePreview(){
+        const popup=document.getElementById('popup');
+        popup.classList.remove('open')
+      }
+      function pesan(){
+        const url="https://wa.me/qr/JSHTHAM3DWUGE1";
+        window.open(url, "_blank");
+      }
+    </script>
+</body>
+</html>
